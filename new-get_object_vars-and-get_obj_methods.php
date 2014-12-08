@@ -1,7 +1,7 @@
 <?php
 /**
 * Description:	get_obj_properties extends PHP internal function get_object_vars
-* Author:		Richard Li
+* Author:	Richard Li
 */
 
 /**
@@ -85,7 +85,7 @@ function get_obj_properties($obj) {
 
 /**
 * Description:	get_obj_methods extends PHP internal function get_class_methods
-* Author:		Richard Li
+* Author:	Richard Li
 */
 
 /**
