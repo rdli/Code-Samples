@@ -29,73 +29,73 @@ var baseClass = function ()
 {	
 	// Data type
 	this.isInt = function (s) {
-			return s === +s && isFinite(s) && !(s % 1);
+		return s === +s && isFinite(s) && !(s % 1);
 	};
 	
 	this.isFloat = function (s) {
-			return +s === s && (!isFinite(s) || !!(s % 1));
+		return +s === s && (!isFinite(s) || !!(s % 1));
 	};
 	
 	this.isNumeric = function (s) {
-			return (typeof s === "number" || typeof s === "string") && s !== "" && !isNaN(s);
+		return (typeof s === "number" || typeof s === "string") && s !== "" && !isNaN(s);
 	};
 	
 	this.isString = function (s) {
-			return (typeof s === "string");
+		return (typeof s === "string");
 	};
 	
 	this.isArray = function (s) {
-			return Object.prototype.toString.call( s ) === "[object Array]";
+		return Object.prototype.toString.call( s ) === "[object Array]";
 	};
 	
 	this.isObject = function (s) {
-			return Object.prototype.toString.call( s ) === "[object Object]";
+		return Object.prototype.toString.call( s ) === "[object Object]";
 	};
 	
 	// Validation	
 	this.validEmail = function (str) {
-			var pattern = new RegExp("^([-a-zA-Z0-9_\.])+\@(([-a-zA-Z0-9])+\.)+([a-zA-Z0-9]{2,4})+$", "ig");
-			
-			if (pattern.test(str)) {
-				return true;
-			} else {
-				return false;
-			}
+		var pattern = new RegExp("^([-a-zA-Z0-9_\.])+\@(([-a-zA-Z0-9])+\.)+([a-zA-Z0-9]{2,4})+$", "ig");
+		
+		if (pattern.test(str)) {
+			return true;
+		} else {
+			return false;
+		}
 	};
 	
 	this.validUrl = function (str) {
-			var pattern = new RegExp(
-						 "^(ftp:\/\/|http:\/\/|https:\/\/|\/\/)" +
-						 "((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|((\d{1,3}\.){3}\d{1,3}))" +
-						 "(\:\d+)?(\/[-a-z\d%_.~+=]*)*" +
-						 "(\?[;&a-z\d%_.~+=-]*)?" +
-						 "(\#[-a-z\d_]*)?$", 
-					"i");
-			if (pattern.test(str)) {
-				return true;
-			} else {
-				return false;
-			}
+		var pattern = new RegExp(
+					 "^(ftp:\/\/|http:\/\/|https:\/\/|\/\/)" +
+					 "((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|((\d{1,3}\.){3}\d{1,3}))" +
+					 "(\:\d+)?(\/[-a-z\d%_.~+=]*)*" +
+					 "(\?[;&a-z\d%_.~+=-]*)?" +
+					 "(\#[-a-z\d_]*)?$", 
+				"i");
+		if (pattern.test(str)) {
+			return true;
+		} else {
+			return false;
+		}
 	};
 	
 	// Setting keyboard when class instance is created  
 	document.onkeydown = function(e) {
-			var keycode = e.keyCode ? e.keyCode : e.which;
-			
-			// Pressing key Ctrl
-			if (keycode == 17) {
-				firstkey = true;
-			}
-			
-			if (keycode == 88 && firstkey == true) {
-				// Processing code for Ctrl - X			
-				return firstkey = false;
-			}
-			
-			if (keycode == 120) {
-				// Processing code for F9	
-				return false;
-			}
+		var keycode = e.keyCode ? e.keyCode : e.which;
+		
+		// Pressing key Ctrl
+		if (keycode == 17) {
+			firstkey = true;
+		}
+		
+		if (keycode == 88 && firstkey == true) {
+			// Processing code for Ctrl - X			
+			return firstkey = false;
+		}
+		
+		if (keycode == 120) {
+			// Processing code for F9	
+			return false;
+		}
 	};
 	
 	// Loading JavaScript file 
@@ -124,7 +124,7 @@ var appClass = function (classNo)
 	
 	// Inheritance of baseClass and baseEnumClass
 	baseClass.apply(this, arguments);		// Or baseClass.call(this, arguments.toString());	
-	baseEnumClass.apply(this, arguments);	// Or baseEnumClass.call(this, arguments.toString());
+	baseEnumClass.apply(this, arguments);		// Or baseEnumClass.call(this, arguments.toString());
 	
 	// Private properties
 	var className = "appClass";
